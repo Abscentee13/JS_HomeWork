@@ -70,7 +70,7 @@ console.log(typeof c);
 
 firstName = window.prompt('Name');
 lastName = window.prompt('Lastname');
-age = window.prompt('Age');
+age = parseInt(window.prompt('Age'));
 console.log(firstName);
 console.log(lastName);
 console.log(age);
