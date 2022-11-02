@@ -1,13 +1,15 @@
 
+///Створити масив, наповнити його 10 елементами будь-якого типу, вивести кожен елемент в консоль
 
 let array1=[12, 12.4, -10, true, false, "aaa", "bbbbb", 1494, 4, 0.22222];
 
-for (let i=0; i<array1.length; i++)
-    console.log(i+' '+array1[i]);
+for (let i=0; i<array1.length; i++) {
+    console.log(i + ' ' + array1[i]);
+}
 
 
 //*****************************
-
+//Створити 3 об'єкти які описують книги. Поля об'єкту : title ,pageCount, genre.
 let book1={
     title: "1984",
     pageCount: "123",
@@ -27,7 +29,8 @@ let book3={
 };
 
 //*********************************
-
+//Створити 3 об'єкти які описують книги. Поля об'єкту : title ,pageCount, genre, authors.
+//Поле "автори" - масив. Кожен автор має поля name,age
 let book01={
     title: "1984",
     pageCount: "123",
@@ -81,7 +84,8 @@ let book03={
 };
 
 //************************************
-
+//Створити масив з 10 об'єктами які описують сутніть "користувач".
+//Поля: name, username,password. Вивести в консоль пароль кожного користувача
 let users=  [
                 {
                     name: "aaa",
@@ -135,5 +139,6 @@ let users=  [
                 }
             ]
 console.log("Паролі");
-for (let i=0; i<users.length; i++)
-    console.log(i+' '+users[i].password);
+for (let i=0; i<users.length; i++) {
+    console.log(i + ' ' + users[i].password);
+}
