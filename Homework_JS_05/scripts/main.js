@@ -85,7 +85,7 @@ function anotherListPrint(tempText, n)
 
 
 let arrayStuff = ["Перший", 5, "Третій", 3, 2, 3.12121212, 5, 6, 67, 54, 3, 3, 2];
-///////////////// ТУТ НЕ ПОНЯЛА чого виводить індекси
+//////////////// ТУТ НЕ ПОНЯЛА чого виводить індекси
         arrayListPrint1(arrayStuff);
 
         function arrayListPrint1(tempArrayStuff)
