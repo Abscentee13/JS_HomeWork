@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="564c61ca-148c-47f8-a145-5242c1862970" name="Changes" comment="HomeWork03 JS End">
+    <list default="true" id="564c61ca-148c-47f8-a145-5242c1862970" name="Changes" comment="HomeWork04 JS End">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +50,9 @@
       <workItem from="1668098815102" duration="470000" />
       <workItem from="1668099301795" duration="9630000" />
       <workItem from="1668191034711" duration="11273000" />
-      <workItem from="1668251896028" duration="1047000" />
+      <workItem from="1668251896028" duration="2441000" />
+      <workItem from="1668256607116" duration="7000" />
+      <workItem from="1668517617971" duration="5539000" />
     </task>
     <task id="LOCAL-00001" summary="HomeWork01 JS">
       <created>1667244156867</created>
@@ -94,7 +96,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668108788189</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="HomeWork04 JS End">
+      <created>1668253014283</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1668253014283</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,6 +124,7 @@
     <MESSAGE value="HomeWork01 JS" />
     <MESSAGE value="HomeWork02 JS" />
     <MESSAGE value="HomeWork03 JS End" />
-    <option name="LAST_COMMIT_MESSAGE" value="HomeWork03 JS End" />
+    <MESSAGE value="HomeWork04 JS End" />
+    <option name="LAST_COMMIT_MESSAGE" value="HomeWork04 JS End" />
   </component>
 </project>
