@@ -1,0 +1,26 @@
+.page{
+    background-color: #556655;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.output_block{
+    border: medium solid bisque;
+    border-radius: 15%;
+    width: 33vw;
+    margin: 5px 0px 5px 0px ;
+    padding: 15px 15px 15px 15px ;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    background: linear-gradient(-45deg, #556655, #F5965E);
+    color: #f4f4f4;
+    text-shadow: -1px -1px white, 1px 1px gray, 2px 2px #7a7a7a, 3px 3px #757575, 4px 4px #707070;
+    font-size: 25px;
+}

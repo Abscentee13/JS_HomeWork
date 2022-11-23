@@ -87,7 +87,7 @@ nums = [11,21,3];
                             })
        return nn;
    }
-console.log(sortNumsArray);
+console.log(sortNumsArray(nums));
 
    ///////// через просту функцію нормально //////////////////////
 function sortNums (nums, direction) {
