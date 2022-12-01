@@ -1,13 +1,33 @@
 // - Напишите функцию cutString(str, n), которая делит строку на подстроки, состоящие из n символов.
 // document.writeln(cutString('наслаждение',3)) // [нас,лаж,ден,ие]
 
+function cutString (str, n)
+{
+    let sliceArray = [];
+    while (str.length > 0) {
+        sliceArray.push(str.substring(0, n));
+        str = str.substring(n, str.length);
+    }
+    return sliceArray;
+}
+let str = "неочікуваний";
+let n=5;
+console.log(cutString(str, n));
 
 
 // - Напишіть функцію delete_characters(str, length), яка повертає підрядок,
 // що складається із зазначеної кількості символів.
-//     let str = 'Каждый охотник желает знать';
+str = 'Каждый охотник желает знать';
 // document.writeln(delete_characters(str, 7)); // Каждый
 //
+
+function delete_characters(str, length)
+{
+    return str.substring(0, length);
+}
+
+let lengthPartOfString=5;
+console.log(delete_characters(str, lengthPartOfString));
 
 
 
@@ -17,13 +37,22 @@
 // document.writeln(insert_dash(str)); // 'HTML-JAVASCRIPT-PHP'
 //
 
+function insert_dash(str)
+{
+  return str.toUpperCase()
+            .replaceAll(" ", "-");
+}
 
+console.log(insert_dash(str));
 
 // - Напишіть функцію, яка приймає рядок як аргумент і перетворює регістр
 // першого символу рядка з нижнього регістру у верхній.
 //
-
-
+str = "первый символ ";
+function upper_first_letter(str) {
+    return (str[0].toUpperCase() + str.substring(1, str.length - 1));
+}
+console.log(upper_first_letter(str));
 
 // - Дано список імен.
 let n1 = 'Harry..Potter'
@@ -60,20 +89,53 @@ function validationName (noValidName)
 
 //     - створити функцію, яка генерує масив рандомних числових цілих значень в діапазоні від 0 до 100.
 
+n = 10;
+
+numberArray = (n => {
+    let numberArray = [];
+    for (let i=0; i < n; i++)
+        {
+            numberArray.push(Math.round(Math.random() * 100));
+        }
+    return numberArray;
+
+});
 
 // - створити (або згенерувати, за допомоги попередньої функції) масив рандомних цілих числових значень.
 // Відсортувати його за допомоги sort
 
+console.log(numberArray(14).sort(function (num1, num2)
+{
+    if (num1 > num2) return 1;
+    if (num1 < num2) return -1;
+    if (num1 === num2) return 0;
+}));
 
 // - створити (або згенерувати, за допомоги попередньої функції) масив рандомних цілих числових значень.
 // відфільтрувати  його за допомоги filter, залишивши тільки парні числа (без 0!)
 //
 
+console.log(numberArray(14).filter(num1 => num1 % 2 === 0 && num1 !== 0));
 
 // - Напишіть функцію capitalize(str), яка повертає рядок, у якому кожне слово починається з великої літери.
+str = "первый символ ";
+
+function capitalize(str) {
+    let tempArrayString = [];
+    str.split(' ').forEach(function (tmpString)
+    {
+        tempArrayString.push(tmpString.substring(0, 1).toUpperCase() + tmpString.substring(1));
+    });
+    return tempArrayString.join(' ');
+    };
+
+console.log(capitalize(str));
 
 
-// - Створити функцію-валідатор для адрес електронної пошти. Перевірка повинна включати в себе :данні до знака равлика(@), наявність равлика, крапку яка знаходиться не меньше ніж на 2 символ далі після равлика, функція не чутлива до регістру (some@email.com,SOME@EMAIL.COM,some@EMAIL.com, і тд - однакові значення)
+// - Створити функцію-валідатор для адрес електронної пошти.
+// Перевірка повинна включати в себе :данні до знака равлика(@), наявність равлика,
+// крапку яка знаходиться не меньше ніж на 2 символ далі після равлика,
+// функція не чутлива до регістру (some@email.com,SOME@EMAIL.COM,some@EMAIL.com, і тд - однакові значення)
 // Протестувати на значеннях
 // someemail@gmail.com
 // someeMAIL@gmail.com
@@ -84,6 +146,30 @@ function validationName (noValidName)
 // Для тих, хто дуже розумний, та почне використовувати регулярні вирази одразу "ні". Своїм мозком подумайте над протоколом, з регулярками будете потім бавитись.
 //
 
+let mailString = "someemail@gmail.com";
+
+function mailValidation(mailString) {
+        return !((mailString.split('@').length !== 2) ||
+            (mailString.split('@')[0] === "") ||
+            (mailString.split('@')[1] === "") ||
+            (mailString.split('@')[1].split('.').length < 2) ||
+            (mailString.split('@')[1].split('.')[mailString.split('@')[1].split('.').length-1].length < 2) ||
+            (mailString.split('@')[1].split('.')[0].length < 1))
+        };
+mailString = "someemail@gmail.com";
+console.log(mailString + " valid is " + mailValidation(mailString));
+mailString = "some.email@gmail.com";
+console.log(mailString + " valid is " + mailValidation(mailString));
+mailString = "someeMAIL@i.ua";
+console.log(mailString + " valid is " + mailValidation(mailString));
+mailString = "someeMAIL@i.ua";
+console.log(mailString + " valid is " + mailValidation(mailString));
+mailString = "someemail@gmail.comsomee@mail@gmail.com";
+console.log(mailString + " valid is " + mailValidation(mailString));
+mailString = "someeMAIL@.ua";
+console.log(mailString + " valid is " + mailValidation(mailString));
+mailString = "someemaomsomeegmail.com";
+console.log(mailString + " valid is " + mailValidation(mailString));
 
 
 // - є масив
@@ -161,16 +247,32 @@ let coursesArray = [
 // відсортувати його в спадаючому порядку за кількістю елементів в полі modules
 //
 
-
+console.log(coursesArray.sort(function (obj1, obj2)
+{
+    if (obj1.modules.length > obj2.modules.length) return -1;
+    if (obj1.modules.length < obj2.modules.length) return 1;
+    if (obj1.modules.length === obj2.modules.length) return 0;
+}));
 
 
 // - Напишіть функцію count(str, stringsearch), яка повертає кількість символів stringsearch у рядку str.
-//     let symb = "о", str = "Астрономия это наука о небесных объектах";
+     let symbol = "о";
+     str = "Астрономия это наука о небесных объектах";
 // document.writeln(count(str, symb)) // 5
-//
 
-
-
+console.log(count(str, symbol));
+function count (str, symbol) {
+    let tempString = str;
+    let count = 0;
+    while (tempString.indexOf(symbol) !== -1)
+    {
+        tempString = tempString.replace(tempString.indexOf(symbol), "");
+        console.log(tempString);
+        count++;
+    }
+    return count;
+};
+///||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 // - Напишіть функцію cutString(str, n), яка видаляє зайві слова з рядка str, залишивши у ній n слів.
 //     let str = "Сила тяжести приложена к центру масс тела";
 // document.writeln(cutString(str, 5)) // 'Сила тяжести приложена к центру'
