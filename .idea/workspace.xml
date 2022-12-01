@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="564c61ca-148c-47f8-a145-5242c1862970" name="Changes" comment="HomeWork06 JS End">
+    <list default="true" id="564c61ca-148c-47f8-a145-5242c1862970" name="Changes" comment="HomeWork06 JS Additional Start">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Homework_JS_06/scripts/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Homework_JS_06/scripts/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homework_JS_06 additional/scripts/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Homework_JS_06 additional/scripts/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,14 +32,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -59,6 +66,7 @@
       <workItem from="1669118100666" duration="14102000" />
       <workItem from="1669198606441" duration="2800000" />
       <workItem from="1669215081080" duration="417000" />
+      <workItem from="1669808348641" duration="3755000" />
     </task>
     <task id="LOCAL-00001" summary="HomeWork01 JS">
       <created>1667244156867</created>
@@ -162,6 +170,7 @@
     <MESSAGE value="HomeWork05 JS End" />
     <MESSAGE value="HomeWork06 JS process" />
     <MESSAGE value="HomeWork06 JS End" />
-    <option name="LAST_COMMIT_MESSAGE" value="HomeWork06 JS End" />
+    <MESSAGE value="HomeWork06 JS Additional Start" />
+    <option name="LAST_COMMIT_MESSAGE" value="HomeWork06 JS Additional Start" />
   </component>
 </project>
