@@ -247,12 +247,12 @@ let coursesArray = [
 // відсортувати його в спадаючому порядку за кількістю елементів в полі modules
 //
 
-console.log(coursesArray.sort(function (obj1, obj2)
-{
-    if (obj1.modules.length > obj2.modules.length) return -1;
-    if (obj1.modules.length < obj2.modules.length) return 1;
-    if (obj1.modules.length === obj2.modules.length) return 0;
-}));
+    console.log(coursesArray.sort(function (obj1, obj2)
+    {
+        if (obj1.modules.length > obj2.modules.length) return -1;
+        if (obj1.modules.length < obj2.modules.length) return 1;
+        if (obj1.modules.length === obj2.modules.length) return 0;
+    }));
 
 
 // - Напишіть функцію count(str, stringsearch), яка повертає кількість символів stringsearch у рядку str.
@@ -260,37 +260,85 @@ console.log(coursesArray.sort(function (obj1, obj2)
      str = "Астрономия это наука о небесных объектах";
 // document.writeln(count(str, symb)) // 5
 
-console.log(count(str, symbol));
-function count (str, symbol) {
-    let tempString = str;
-    let count = 0;
-    while (tempString.indexOf(symbol) !== -1)
-    {
-        tempString = tempString.replace(tempString.indexOf(symbol), "");
-        console.log(tempString);
-        count++;
-    }
-    return count;
-};
-///||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+    console.log('у рядку "' + str + '" ' + count(str, symbol) + ' символів "' + symbol + '"');
+    function count (str, symbol) {
+        let tempString = str;
+        let count = 0;
+        while (tempString.indexOf(symbol) !== -1)
+        {
+            tempString = tempString.replace(symbol, "");
+            count++;
+        }
+        return count;
+    };
+
+
 // - Напишіть функцію cutString(str, n), яка видаляє зайві слова з рядка str, залишивши у ній n слів.
 //     let str = "Сила тяжести приложена к центру масс тела";
 // document.writeln(cutString(str, 5)) // 'Сила тяжести приложена к центру'
 //
 //
+    str = "Сила тяжести приложена к центру масс тела";
+    n = 5;
 
-
+    console.log(cutWords(str, n));
+    function cutWords(str, n) {
+        let tempArrayString = [];
+        for (let i=0; i<n; i++)
+            {
+                tempArrayString.push(str.split(' ')[i]);
+            }
+        return tempArrayString.join(' ');
+    };
 
 // -стоврити масив книжок (назва, кількість сторінок, автори , жанри).
 
+let book = [
+
+    {name:`foreword`, pageCount: 14, authors: ['AAA', 'BBB', 'CCC'], genre: ['ccc']},
+    {name:`boyWhoLived`, pageCount: 18, authors: ['AAA'], genre: ['aaa', 'ccc']},
+    {name:`vanishingGlass`, pageCount: 13, authors: ['AAA', 'BBB', ], genre: ['aaa', 'bbb', 'ccc', 'ddd']},
+    {name:`lettersFromNoOne`, pageCount: 17, authors: ['BBB', 'CCC'], genre: ['aaa']},
+    {name:`afterword`, pageCount: 19, authors: ['CCC'], genre: ['aaa', 'bbb', 'ccc']}
+
+];
+console.log(book);
 
 // -знайти наібльшу книжку.
+console.log('знайти найбільшу книжку ');
+console.log(book.sort(function (book1, book2)
+                                                            {
+                                                                if (book1.pageCount > book2.pageCount) return -1;
+                                                                if (book1.pageCount < book2.pageCount) return 1;
+                                                                if (book1.pageCount === book2.pageCount) return 0;
+                                                            })[0]);
+
+
 
 // - знайти книжку/ки з найбільшою кількістю жанрів
+
+console.log('знайти книжку/ки з найбільшою кількістю жанрів ');
+console.log(maxGenre(book));
+
+let maxGenre = (book) => ({book.sort(function (book1, book2)
+    {
+        if (book1.genre.length > book2.genre.length) return -1;
+        if (book1.genre.length < book2.genre.length) return 1;
+        if (book1.genre.length === book2.genre.length) return 0;
+    })[0]});
+
 
 
 // - знайти книжку/ки з найдовшою назвою
 
+console.log('знайти найбільшу книжку ');
+console.log(book.sort(function (book1, book2)
+{
+    if (book1.name.length > book2.name.length) return -1;
+    if (book1.name.length < book2.name.length) return 1;
+    if (book1.name.length === book2.name.length) return 0;
+})[0]);
 
 // - знайти книжку/ки які писали 2 автори
 
@@ -299,5 +347,12 @@ function count (str, symbol) {
 
 
 // - вісортувати книжки по кількості сторінок по зростанню
-//
+console.log('вісортувати книжки по кількості сторінок по зростанню ');
+console.log(book.sort(function (book1, book2)
+{
+    if (book1.pageCount > book2.pageCount) return 1;
+    if (book1.pageCount < book2.pageCount) return -1;
+    if (book1.pageCount === book2.pageCount) return 0;
+}));
+
 //
