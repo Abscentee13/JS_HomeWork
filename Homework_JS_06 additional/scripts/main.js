@@ -319,16 +319,28 @@ console.log(book.sort(function (book1, book2)
 // - знайти книжку/ки з найбільшою кількістю жанрів
 
 console.log('знайти книжку/ки з найбільшою кількістю жанрів ');
-console.log(maxGenre(book));
 
-let maxGenre = (book) => ({book.sort(function (book1, book2)
-    {
-        if (book1.genre.length > book2.genre.length) return -1;
-        if (book1.genre.length < book2.genre.length) return 1;
-        if (book1.genre.length === book2.genre.length) return 0;
-    })[0]});
+let books = [
 
+    {name:`foreword`, pageCount: 14, authors: ['AAA', 'BBB', 'CCC'], genre: ['ccc']},
+    {name:`boyWhoLived`, pageCount: 18, authors: ['AAA'], genre: ['aaa', 'ccc']},
+    {name:`vanishingGlass`, pageCount: 13, authors: ['AAA', 'BBB', ], genre: ['aaa', 'bbb', 'ccc', 'ddd']},
+    {name:`lettersFromNoOne`, pageCount: 17, authors: ['BBB', 'CCC'], genre: ['aaa']},
+    {name:`afterword`, pageCount: 19, authors: ['CCC'], genre: ['aaa', 'bbb', 'ccc']}
 
+];
+
+let maxGenre = (books) => {
+    books.sort(function (book1, book2) {
+                    if (book1.genre.length > book2.genre.length) return -1;
+                    if (book1.genre.length < book2.genre.length) return 1;
+                    if (book1.genre.length === book2.genre.length) return 0;
+                });
+
+    return books[0].name;
+};
+
+console.log(maxGenre(books));
 
 // - знайти книжку/ки з найдовшою назвою
 
