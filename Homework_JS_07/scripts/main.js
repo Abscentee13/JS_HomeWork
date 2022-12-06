@@ -1,11 +1,26 @@
 // - Створити функцію конструктор для об'єктів User з полями id, name, surname , email, phone
 
-
-
+function User(userId, userName, surname, email, phone) {
+    this.userId = userId;
+    this.userName = userName;
+    this.surname = surname;
+    this.email = email;
+    this.phone = phone;
+}
 
 // створити пустий масив, наповнити його 10 об'єктами new User(....)
 //
-
+ let users = new Array();
+    users[0] = new User('', 'Илон', 'Маск', 'u000@rrr.com', '+380505553300');
+    users[1] = new User('', 'Джефф', 'Безос', 'u1111@rrr.com', '+380505553311');
+    users[2] = new User('', 'Бернар', 'Гейтс', 'u222@rrr.com', '+380505553322');
+    users[3] = new User('', 'Билл', 'Эллисон', 'u333@rrr.com', '+380505553333');
+    users[4] = new User('', 'Ларри', 'Пейдж', 'u444@rrr.com', '+380505553344');
+    users[5] = new User('', 'Марк', 'Цукерберг', 'u555@rrr.com', '+380505553355');
+    users[6] = new User('', 'Сергей', 'Брин', 'u666@rrr.com', '+380505553366');
+    users[7] = new User('', 'Уоррен', 'Баффетт', 'u777@rrr.com', '+380505553377');
+    users[8] = new User('', 'Стив', 'Балмер', 'u888@rrr.com', '+380505553388');
+    users[9] = new User('', 'Гаутам', 'Адани', 'u999@rrr.com', '+380505553399');
 
 
 // - Взяти масив з  User[] з попереднього завдання, та відфільтрувати , залишивши тільки об'єкти з парними id (filter)
