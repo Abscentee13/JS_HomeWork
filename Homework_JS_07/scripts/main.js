@@ -45,14 +45,44 @@ console.log(users.sort( function (user1, user2)
 
 // - створити класс для об'єктів Client з полями id, name, surname , email, phone, order (поле є масивом зі списком товарів)
 
+class Client {
+    constructor(clientId, clientName, clientSurname, email, phone, order) {
+        this.clientId = clientId;
+        this.clientName = clientName;
+        this.clientSurname = clientSurname;
+        this.email = email;
+        this.phone = phone;
+        this.order = order;
+    }
+};
+
 
 // створити пустий масив, наповнити його 10 об'єктами Client
 
+let clients = new Array();
+clients[0] = new Client('', 'Илон', 'Маск', 'u000@rrr.com', '+380505553300', ['aaa', 'bbb', 'ccc', 'ddd', 'eeee', 'fffffff']);
+clients[1] = new Client('', 'Джефф', 'Безос', 'u1111@rrr.com', '+380505553311', ['bbb', 'ccc', 'ddd', 'eeee', 'fffffff']);
+clients[2] = new Client('', 'Бернар', 'Гейтс', 'u222@rrr.com', '+380505553322', ['aaa', 'bbb', 'ccc', 'ddd', ]);
+clients[3] = new Client('', 'Билл', 'Эллисон', 'u333@rrr.com', '+380505553333', ['eeee']);
+clients[4] = new Client('', 'Ларри', 'Пейдж', 'u444@rrr.com', '+380505553344', ['aaa', 'bbb', 'ccc', 'ddd', 'eeee', 'fffffff']);
+clients[5] = new Client('', 'Марк', 'Цукерберг', 'u555@rrr.com', '+380505553355', ['aaa', 'bbb', 'eeee', 'fffffff']);
+clients[6] = new Client('', 'Сергей', 'Брин', 'u666@rrr.com', '+380505553366', ['aaa', 'bbb', 'ddd', 'eeee', 'fffffff']);
+clients[7] = new Client('', 'Уоррен', 'Баффетт', 'u777@rrr.com', '+380505553377', ['ccc', 'ddd', 'eeee', 'fffffff']);
+clients[8] = new Client('', 'Стив', 'Балмер', 'u888@rrr.com', '+380505553388', ['aaa', 'bbb', 'ccc', 'ddd', 'eeee', 'fffffff']);
+clients[9] = new Client('', 'Гаутам', 'Адани', 'u999@rrr.com', '+380505553399', ['eeee', 'fffffff']);
 
+for (let i=0; i<clients.length; i++)
+{
+    clients[i].clientId = i;
+}
 
 // - Взяти масив (Client [] з попереднього завдання).Відсортувати його по кількості товарів в полі order по зростанню. (sort)
 
-
+console.log(clients.sort(function (client1, client2) {
+    if (client1.order.length > client2.order.length) return 1;
+    if (client1.order.length < client2.order.length) return -1;
+    if (client1.order.length === client2.order.length) return 0;
+}));
 
 // - Створити функцію конструктор яка дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску,
 // максимальна швидкість, об'єм двигуна. додати в об'єкт функції:
