@@ -22,15 +22,25 @@ function User(userId, userName, surname, email, phone) {
     users[8] = new User('', 'Стив', 'Балмер', 'u888@rrr.com', '+380505553388');
     users[9] = new User('', 'Гаутам', 'Адани', 'u999@rrr.com', '+380505553399');
 
+    for (let i=0; i<users.length; i++)
+    {
+        users[i].userId = i;
+    }
+
 
 // - Взяти масив з  User[] з попереднього завдання, та відфільтрувати , залишивши тільки об'єкти з парними id (filter)
 //
-
+console.log(users.filter((tempUser) => (tempUser.userId % 2 === 0)));
 
 
 // - Взяти масив з  User[] з попереднього завдання, та відсортувати його по id. по зростанню (sort)
-//
-
+// зроблю по спаданню, щоб була різниця
+console.log(users.sort( function (user1, user2)
+{
+    if (user1.userId > user2.userId) return -1;
+    if (user1.userId < user2.userId) return 1;
+    if (user1.userId === user2.userId) return 0;
+}));
 
 
 // - створити класс для об'єктів Client з полями id, name, surname , email, phone, order (поле є масивом зі списком товарів)
