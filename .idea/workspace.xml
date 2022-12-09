@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="564c61ca-148c-47f8-a145-5242c1862970" name="Changes" comment="HomeWork08 Start">
+    <list default="true" id="564c61ca-148c-47f8-a145-5242c1862970" name="Changes" comment="HomeWork08 Continue">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Homework_JS_07/scripts/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Homework_JS_07/scripts/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homework_JS_08/scripts/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Homework_JS_08/scripts/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +69,7 @@
       <workItem from="1669977412800" duration="8380000" />
       <workItem from="1670350132777" duration="4338000" />
       <workItem from="1670515496689" duration="73000" />
-      <workItem from="1670577472378" duration="1163000" />
+      <workItem from="1670577472378" duration="11552000" />
     </task>
     <task id="LOCAL-00001" summary="HomeWork01 JS">
       <created>1667244156867</created>
@@ -197,7 +197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670353670306</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="HomeWork08 Continue">
+      <created>1670578752993</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1670578752993</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,6 +232,7 @@
     <MESSAGE value="HomeWork06 additional JS NOT End 2" />
     <MESSAGE value="HomeWork06 additional JS End" />
     <MESSAGE value="HomeWork08 Start" />
-    <option name="LAST_COMMIT_MESSAGE" value="HomeWork08 Start" />
+    <MESSAGE value="HomeWork08 Continue" />
+    <option name="LAST_COMMIT_MESSAGE" value="HomeWork08 Continue" />
   </component>
 </project>

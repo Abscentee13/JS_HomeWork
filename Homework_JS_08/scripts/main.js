@@ -92,66 +92,172 @@ console.log(clients.sort(function (client1, client2) {
 // -- drive () - яка виводить в консоль `їдемо зі швидкістю ${максимальна швидкість} на годину`
 // -- info () - яка виводить всю інформацію про автомобіль в форматі `назва поля - значення поля`
 // -- increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
-
-
 // -- changeYear (newValue) - змінює рік випуску на значення newValue
-
-
 // -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
+
 function Car(carModel, carManufacturer, carYear, carMaxSpeed, carEngineVolume) {
     this.carModel = carModel;
     this.carManufacturer = carManufacturer;
     this.carYear = carYear;
     this.carMaxSpeed = carMaxSpeed;
     this.carEngineVolume = carEngineVolume;
+
     this.drive = function(){
         console.log(`їдемо зі швидкістю ${this.carMaxSpeed} на годину`)
-    }
+    };
+
     this.info = function (){
-        console.log(` carModel - ${this.carModel} \n carManufacturer - ${this.carManufacturer} \n carYear - ${this.carYear} \n carMaxSpeed - ${this.carMaxSpeed} \n carEngineVolume - ${this.carEngineVolume}`);
+        // тут гарно, але костиль ось цей -> if (this[prop].prototype === undefined)
+        for (const prop of Object.getOwnPropertyNames(this))
+        {
+            if (this[prop].prototype === undefined)
+            {
+                console.log(prop + ' - ' + JSON.stringify(this[prop]));
+            }
+        }
+
+        //тут негарно, бо коли сворюєм нове поле, воно не виведеться
+        //console.log(` carModel - ${this.carModel} \n carManufacturer - ${this.carManufacturer} \n carYear - ${this.carYear} \n carMaxSpeed - ${this.carMaxSpeed} \n carEngineVolume - ${this.carEngineVolume}`);
+    };
+
+    this.increaseMaxSpeed = function (newSpeed){
+       this.carMaxSpeed += newSpeed;
+    };
+
+    this.changeYear = function (newValue){
+        this.carYear += newValue;
+    };
+
+    this.addDriver = function (driver){
+        this['driver'] = driver;
     }
 }
 
-let newCar = new Car('Audi', 'Audi', '2010', '210', '2,4');
+let newCar = new Car('Audi', 'Audi', 2010, 210, '2,4');
 newCar.drive();
 newCar.info();
 
+newCar.increaseMaxSpeed(20);
+newCar.info();
+
+newCar.changeYear (-10);
+newCar.info();
+
+
+console.log('додали водія');
+newCar.addDriver({name: 'AAa', age: 33});
+newCar.info();
+newCar.addDriver({name: 'bbb', age: 55});
+newCar.info();
 // - (Те саме, тільки через клас)
 
 
 // Створити клас який дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску, максимальна швидкість,
 // об'єм двигуна. додати в об'єкт функції:
-
-
-
 // -- drive () - яка виводить в консоль `їдемо зі швидкістю ${максимальна швидкість} на годину`
-
-
-
 // -- info () - яка виводить всю інформацію про автомобіль в форматі `назва поля - значення поля`
-
-
-
 // -- increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
-
-
-
 // -- changeYear (newValue) - змінює рік випуску на значення newValue
-
-
-
 // -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
+console.log('з класами \n')
+
+class classCar
+    {
+        constructor(carModel, carManufacturer, carYear, carMaxSpeed, carEngineVolume) {
+                                this.carModel = carModel;
+                                this.carManufacturer = carManufacturer;
+                                this.carYear = carYear;
+                                this.carMaxSpeed = carMaxSpeed;
+                                this.carEngineVolume = carEngineVolume;
+                            };
+
+        drive = function(){
+                                console.log(`їдемо зі швидкістю ${this.carMaxSpeed} на годину`)
+                            };
+
+        info = function ()  {
+                            for (const prop of Object.getOwnPropertyNames(this))
+                            {
+                                if (this[prop].prototype === undefined)
+                                {
+                                    console.log(prop + ' - ' + JSON.stringify(this[prop]));
+                                }
+                            }
+                            };
+
+        increaseMaxSpeed = function (newSpeed){
+                                this.carMaxSpeed += newSpeed;
+                            };
+
+        changeYear = function (newValue){
+                                this.carYear += newValue;
+                            };
+
+        addDriver = function (driver){
+                                this['driver'] = driver;
+                            };
+    };
+
+let newObjectCar = new classCar('Volvo', 'Audi', 2020, 250, '3,4');
+newObjectCar.info();
+
+newObjectCar.drive();
+newObjectCar.info();
+
+newObjectCar.increaseMaxSpeed(20);
+newObjectCar.info();
+
+newObjectCar.changeYear (-10);
+newObjectCar.info();
 
 
+console.log('додали водія');
+newObjectCar.addDriver({name: 'AAa', age: 33});
+newObjectCar.info();
+newObjectCar.addDriver({name: 'bbb', age: 55});
+newObjectCar.info();
 
-//
 // -створити класс/функцію конструктор попелюшка з полями ім'я, вік, розмір ноги. Створити масив з 10 попелюшок.
+ class fairyTaleCharacter{
+                     constructor( name, age, shoeSize) {
+                         this.name = name;
+                         this.age = age;
+                         this.shoeSize = shoeSize;
+                     };
 
+                 };
 
+ let girls = new Array();
+
+ for (let i=0; i < 10; i++)
+ {
+     girls[i] = new fairyTaleCharacter(String.fromCharCode(i + 70, i + 74, i + 76), Math.round(Math.random() * 10 + 15), Math.round(Math.random() * 5 + 15));
+ }
+
+console.log(girls);
 // Сторити об'єкт класу "принц" за допомоги класу який має поля ім'я, вік, туфелька яку він знайшов.
 
+let prince = new fairyTaleCharacter('Arnold', 25, 19);
 
 //     За допомоги циклу знайти яка попелюшка повинна бути з принцом.
-
+for (let i=0; i < 10; i++)
+{
+    if (girls[i].shoeSize === prince.shoeSize)
+    {
+        console.log(girls[i]);
+    }
+}
 
 //     Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
+
+// тут тільки перша
+console.log(girls.find((element) => element.shoeSize === prince.shoeSize));
+
+// тут всі
+console.log(girls.filter(function (element) {
+                                                    if (element.shoeSize === prince.shoeSize)
+                                                    {
+                                                        return element;
+                                                    }
+                                            }
+                                            ));
