@@ -330,9 +330,8 @@ for (const users of usersList)
     {
         for (const child of domObject.children)
         {
-            console.log(child.className);
-            if (child.tagName === 'P') arr.paragraphs.push(child.className);
-            if (child.tagName === 'H2') arr.headings.push(child.className);
+            if (child.tagName === 'P') arr.paragraphs.push(child.textContent);
+            if (child.tagName === 'H2') arr.headings.push(child.textContent);
             arr = structOfHtml(arr, child);
         }
     }
@@ -348,3 +347,11 @@ console.log( JSON.stringify(thisDom));
 //
 //     зробити div contenteditable ввести будь яке ціле слово. та при натисканні табуляції перетворити його на подвійний тег
 // asd ->tab-> <asd></asd>
+
+document.write('<div id="tagGenerate" contenteditable="true"> qqq </div> ');
+
+document.getElementById("tagGenerate").addEventListener('keydown', function(event) {
+    if (event.code === 'Tab' ){
+        this.innerText = '<' + this.innerText + '></' + this.innerText + '>';
+    }
+});
